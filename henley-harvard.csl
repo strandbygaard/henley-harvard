@@ -61,6 +61,14 @@
     <choose>
       <if variable="DOI">
         <text variable="DOI" prefix="doi: "/>
+        <group prefix=" [" delimiter=" " suffix="]">
+          <text term="accessed" text-case="capitalize-first"/>
+          <date variable="accessed">
+            <date-part name="day" suffix=" "/>
+            <date-part name="month" suffix=" "/>
+            <date-part name="year"/>
+          </date>
+        </group>	      
       </if>
       <else-if variable="URL">
         <text term="online" prefix="[" suffix="]."/>
